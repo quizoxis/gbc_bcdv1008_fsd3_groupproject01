@@ -13,9 +13,12 @@ Readme.md
 | 101198063 | Shilpa Kaushik | 
 | 101260567 | Mohammad Jamshed Qureshi |
 
+# Project Requirements
+1. [Course Project: Checkout Form](https://www.notion.so/Project-Checkout-Form-cc2deee7fee94165a5678ba5958242a7)
+
 # Requirements
 1. Firebase 
-2. NodeJS
+1. NodeJS
 
 # Configuration
 Firebase Configuration must be created or updated under src/private/firebase/FirebaseConfig.js.

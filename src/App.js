@@ -11,7 +11,7 @@ export default function App() {
     // State
     const [firstName, setFirstName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
-    
+
 
   return (
     <div className='App'>
