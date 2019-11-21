@@ -22,6 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+### Private Directory to keep local at all times. Contains sensitive configuration
+/src/private/firebase
 
 # Created by https://www.gitignore.io/api/node,macos,windows,firebase,intellij+all,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,macos,windows,firebase,intellij+all,visualstudiocode

@@ -13,6 +13,28 @@ Readme.md
 | 101198063 | Shilpa Kaushik | 
 | 101260567 | Mohammad Jamshed Qureshi |
 
+# Requirements
+1. Firebase 
+2. NodeJS
+
+# Configuration
+Firebase Configuration must be created or updated under src/private/firebase/FirebaseConfig.js.
+1. Copy  src/templates/firebase/FirebaseConfig.js to src/private/firebase/FirebaseConfig.js
+1. Update configuration
+
+Example Firebase configuration file:
+```javascript
+const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+};
+```
+
 # Running
 In the project directory, you can run:
 
