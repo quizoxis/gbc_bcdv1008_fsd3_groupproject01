@@ -50,5 +50,6 @@ You will also see any lint errors in the console.
 # Cloning This Repo
 1. `cd` into this directory
 1. Run `npm install`
+1. Setup Firebase Configuration parameters (see above)
 1. Run `npm start`
 1. Go into `src/App.js` to do the project
