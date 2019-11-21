@@ -1,19 +1,32 @@
 Readme.md
 
-# FULL STACK DEVELOPER – III – Group Project
+# Group Project
+|  |  |
+| ----------- | ----------- |
 | Program Name | Blockchain Development T175 Fall 2019 |
-| Course | Full Stack Development II - BCDV 1007 |
+| Course | Full Stack Development III CRN-10555-201901 |
 
 # Group Information
-| Syntax | Description |
+| Student ID | Name |
 | ----------- | ----------- |
-| Student ID | 101260567 |
-| Student Name | Mohammad Jamshed Qureshi |
+| 100191710 | Andrew Starling |
+| 101198063 | Shilpa Kaushik | 
+| 101260567 | Mohammad Jamshed Qureshi |
 
- 
-1. Clone this repo
+# Running
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in 
+the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+# Cloning This Repo
 1. `cd` into this directory
 1. Run `npm install`
 1. Run `npm start`
 1. Go into `src/App.js` to do the project
-GBC_FS3_GroupProject1
