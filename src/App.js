@@ -158,7 +158,6 @@ export default function App() {
     }
 
     const onClickSubmit = () => {
-      console.log("Clicked submit button!");
       setActiveStep(2);
     };
     return (
@@ -226,7 +225,6 @@ export default function App() {
     }
 
     const onClickSubmit = () => {
-      console.log("Clicked submit button!");
       setActiveStep(3);
     };
 
@@ -281,7 +279,6 @@ export default function App() {
 
     const onClickSubmit = () => {
       setFormButtonText("Done");
-      console.log("Clicked submit button!");
     };
 
     return (
