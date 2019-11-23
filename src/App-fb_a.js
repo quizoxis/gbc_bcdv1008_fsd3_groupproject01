@@ -3,7 +3,6 @@ import React from "react";
 import ErrorMessage from "./components/ErrorMessage";
 import "bootstrap/dist/css/bootstrap.css";
 import Select from "react-select";
-import firebase from "Firebase"
 
 function useTextInputState() {
   const [value, setValue] = React.useState("");
@@ -105,7 +104,6 @@ function RadioInputField({ value, checked, onChange }) {
 //
 
 export default function App() {
-
   const firstNameState = useTextInputState();
   const lastNameState = useTextInputState();
   const cityState = useTextInputState();
@@ -293,8 +291,7 @@ export default function App() {
       };
 
       // initialize Firebase
-      firebase.initializeApp(firebaseConfig)
-
+      firebase.initializeApp(firebaseConfig);
       const dbRef = firebase.database().ref();
 
       function addClientBtnClicked(infoFirstName,

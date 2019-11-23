@@ -39,7 +39,6 @@ class Firebase {
     // User Logout
     doUserLogout = () => this.auth.signOut();
 
-
     // User Password Management
     // Password Reset
     doUserPasswordResetWithEmail = email => this.auth.sendPasswordResetEmail(email);
@@ -48,7 +47,11 @@ class Firebase {
     doUserPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password);
 
-    //
+    // Insert Document
+    doAddDocument = () => {
+
+        alert('Adding document...')
+    }
 
 }
 
