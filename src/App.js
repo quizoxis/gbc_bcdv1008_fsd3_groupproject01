@@ -3,7 +3,21 @@ import React from "react";
 import ErrorMessage from "./components/ErrorMessage";
 import "bootstrap/dist/css/bootstrap.css";
 import Select from "react-select";
-import firebase from "Firebase"
+import * as firebase from "firebase/app";
+import "firebase/database";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBBQu49ILehSkat3D_wku_mtyGp3PmV8rA",
+  authDomain: "gbc-fs3-gp.firebaseapp.com",
+  databaseURL: "https://gbc-fs3-gp.firebaseio.com",
+  projectId: "gbc-fs3-gp",
+  storageBucket: "gbc-fs3-gp.appspot.com",
+  messagingSenderId: "305983690159",
+  appId: "1:305983690159:web:4ed01954a51f434d804b5a"
+};
+
+// initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 function useTextInputState() {
   const [value, setValue] = React.useState("");
@@ -105,7 +119,6 @@ function RadioInputField({ value, checked, onChange }) {
 //
 
 export default function App() {
-
   const firstNameState = useTextInputState();
   const lastNameState = useTextInputState();
   const cityState = useTextInputState();
@@ -282,32 +295,20 @@ export default function App() {
     const onClickSubmit = () => {
       setFormButtonText("Done");
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyBBQu49ILehSkat3D_wku_mtyGp3PmV8rA",
-        authDomain: "gbc-fs3-gp.firebaseapp.com",
-        databaseURL: "https://gbc-fs3-gp.firebaseio.com",
-        projectId: "gbc-fs3-gp",
-        storageBucket: "gbc-fs3-gp.appspot.com",
-        messagingSenderId: "305983690159",
-        appId: "1:305983690159:web:4ed01954a51f434d804b5a"
-      };
-
-      // initialize Firebase
-      firebase.initializeApp(firebaseConfig)
-
       const dbRef = firebase.database().ref();
 
-      function addClientBtnClicked(infoFirstName,
-                                   infoLastName,
-                                   dietRestriction,
-                                   addressCity,
-                                   addressProvince,
-                                   paymentMethod,
-                                   legalAgreeToTerms) {
-
+      function addClientBtnClicked(
+        infoFirstName,
+        infoLastName,
+        dietRestriction,
+        addressCity,
+        addressProvince,
+        paymentMethod,
+        legalAgreeToTerms
+      ) {
         //console.log("Submit clicked");
 
-        const clientRef = dbRef.child('client');
+        const clientRef = dbRef.child("client");
 
         // object to hold new client info
         let newClient = {};
@@ -323,8 +324,8 @@ export default function App() {
         // push new client object to the database
         clientRef.push(newClient);
 
-        let postId = pushedPostRef.getKey();
-        console.log(postId);
+        // let postId = pushedPostRef.getKey();
+        // console.log(postId);
 
         alert("New client record saved.");
 
@@ -332,8 +333,15 @@ export default function App() {
         // location.reload(true);
       }
 
-      addClientBtnClicked(firstNameState, lastNameState,diet,cityState,province,pay,isAgree)
-
+      addClientBtnClicked(
+        firstNameState.value,
+        lastNameState.value,
+        diet.value,
+        cityState.value,
+        province.value,
+        pay,
+        isAgree
+      );
     };
 
     return (
