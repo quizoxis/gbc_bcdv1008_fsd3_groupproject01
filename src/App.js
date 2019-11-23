@@ -122,6 +122,8 @@ export default function App() {
 
   const [activeStep, setActiveStep] = React.useState(1);
 
+  const [formButtonText, setFormButtonText] = React.useState("Submit");
+
   const [isOnline, setIsOnline] = React.useState(navigator.onLine);
 
   React.useEffect(() => {
@@ -136,6 +138,19 @@ export default function App() {
       window.removeEventListener("offline", handleOffline);
     };
   }, []);
+
+  const displayNetworkStatus = isOnline => {
+    if (isOnline) {
+      return null;
+    }
+    return (
+      <div>
+        <h5 class="Warning.err">
+          Network status: {isOnline ? "online" : "offline"}
+        </h5>
+      </div>
+    );
+  };
 
   const step1 = activeStep => {
     if (activeStep !== 1) {
@@ -187,10 +202,6 @@ export default function App() {
             />
           </div>
         </FormField>
-
-        <div>
-          <h5>Network status: {isOnline ? "online" : "offline"}</h5>
-        </div>
 
         <div className="FormSubmit">
           <button
@@ -250,10 +261,6 @@ export default function App() {
           </div>
         </FormField>
 
-        <div>
-          <h5>Network status: {isOnline ? "online" : "offline"}</h5>
-        </div>
-
         <div className="FormSubmit">
           <button
             className="FormSubmit-Button"
@@ -273,6 +280,7 @@ export default function App() {
     }
 
     const onClickSubmit = () => {
+      setFormButtonText("Done");
       console.log("Clicked submit button!");
     };
 
@@ -334,17 +342,17 @@ export default function App() {
           </FormFieldLabel>
         </FormField>
 
-        <div>
-          <h5>Network status: {isOnline ? "online" : "offline"}</h5>
-        </div>
-
         <div className="FormSubmit">
           <button
-            className="FormSubmit-Button"
+            className={
+              formButtonText === "Done"
+                ? "btn btn-success"
+                : "FormSubmit-Button"
+            }
             onClick={onClickSubmit}
             disabled={!pay || !isAgree || !isOnline}
           >
-            Submit
+            {formButtonText}
           </button>
         </div>
       </div>
@@ -359,6 +367,7 @@ export default function App() {
         {step1(activeStep)}
         {step2(activeStep)}
         {step3(activeStep)}
+        {displayNetworkStatus(isOnline)}
       </div>
     </div>
   );
