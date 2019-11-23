@@ -48,6 +48,7 @@ class Firebase {
     doUserPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password);
 
+    //
 
 }
 

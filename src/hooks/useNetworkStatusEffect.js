@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function useNetworkStatusEffect() {
   const [isOnline, setIsOnline] = React.useState(navigator.onLine)
+
   React.useEffect(() => {
     const handleOnline = () => {
       console.log('Network connection is online')
